@@ -461,7 +461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249, y: 609}
+  m_AnchoredPosition: {x: -249, y: 486}
   m_SizeDelta: {x: 364.0247, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57459382
@@ -652,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -935,10 +935,10 @@ RectTransform:
   - {fileID: 668475262}
   m_Father: {fileID: 1604521803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: 706}
-  m_SizeDelta: {x: 996, y: 179.01788}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 411.5}
+  m_SizeDelta: {x: 996, y: 180.01788}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137761226
 MonoBehaviour:
@@ -1048,7 +1048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138985595}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 970833573}
+        m_TargetAssemblyTypeName: ResetDeviceBindings, Assembly-CSharp
+        m_MethodName: ResetControlSchemeBinding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &138985595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,7 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2439,7 +2451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: 609}
+  m_AnchoredPosition: {x: 190, y: 486}
   m_SizeDelta: {x: 364.0247, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638050111
@@ -3333,7 +3345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3837,7 +3849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4040,6 +4052,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970833572}
+  - component: {fileID: 970833573}
+  - component: {fileID: 970833574}
   m_Layer: 5
   m_Name: --KeyboardCanvas
   m_TagString: Untagged
@@ -4069,6 +4083,33 @@ RectTransform:
   m_AnchoredPosition: {x: 237.38, y: -63.037964}
   m_SizeDelta: {x: 729.24, y: 861.92}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &970833573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970833571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2800f5b6fe6fd4ea8a9b71ab95eff0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputActions: {fileID: -944628639613478452, guid: 5466be93bb83e4402b6bb6113b3020a7, type: 3}
+  _targetControlSchema: Desktop
+--- !u!114 &970833574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970833571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: {fileID: -944628639613478452, guid: 5466be93bb83e4402b6bb6113b3020a7, type: 3}
 --- !u!1 &992151233
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,7 +6431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227, y: 540.09705}
+  m_AnchoredPosition: {x: -227, y: 450}
   m_SizeDelta: {x: 496.0116, y: 86.3145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488584856
@@ -6569,7 +6610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6700,6 +6741,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583387457}
+  - component: {fileID: 1583387458}
+  - component: {fileID: 1583387459}
   m_Layer: 5
   m_Name: --GamepadCanvas
   m_TagString: Untagged
@@ -6729,6 +6772,33 @@ RectTransform:
   m_AnchoredPosition: {x: 237.38, y: -63.037964}
   m_SizeDelta: {x: 729.24, y: 861.92}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1583387458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583387456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2800f5b6fe6fd4ea8a9b71ab95eff0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputActions: {fileID: -944628639613478452, guid: 5466be93bb83e4402b6bb6113b3020a7, type: 3}
+  _targetControlSchema: Switch
+--- !u!114 &1583387459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583387456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: {fileID: -944628639613478452, guid: 5466be93bb83e4402b6bb6113b3020a7, type: 3}
 --- !u!1 &1588856028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8459,7 +8529,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2122932347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583387458}
+        m_TargetAssemblyTypeName: ResetDeviceBindings, Assembly-CSharp
+        m_MethodName: ResetControlSchemeBinding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2122932347
 MonoBehaviour:
   m_ObjectHideFlags: 0
