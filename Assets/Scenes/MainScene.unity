@@ -9401,6 +9401,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9099904296176740096, guid: faaad468d0f6b447c991ff71b725cc95, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099904296176740096, guid: faaad468d0f6b447c991ff71b725cc95, type: 3}
+      propertyPath: moveAction.m_Name
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099904296176740096, guid: faaad468d0f6b447c991ff71b725cc95, type: 3}
+      propertyPath: playerControlsAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 5466be93bb83e4402b6bb6113b3020a7, type: 3}
+    - target: {fileID: 9099904296176740096, guid: faaad468d0f6b447c991ff71b725cc95, type: 3}
+      propertyPath: moveAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099904296176740096, guid: faaad468d0f6b447c991ff71b725cc95, type: 3}
+      propertyPath: moveAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 3ac8689b-ea99-4b93-8121-b4a0278e3e63
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099904296176740096, guid: faaad468d0f6b447c991ff71b725cc95, type: 3}
+      propertyPath: moveAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Move
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

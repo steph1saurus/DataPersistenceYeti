@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    
-    [SerializeField] private float speed = 20;
-    [SerializeField] private float jumpForce = 35f;
-    [SerializeField] private float gravityModifier = 2f;
-    [SerializeField] private float horizontalInput;
+
+    [Header ("Player Movement Modifiers")]
+    [SerializeField] float speed = 20;
+    [SerializeField] float jumpForce = 35f;
+    [SerializeField] float gravityModifier = 2f;
+    [SerializeField] float horizontalInput;
 
     private Rigidbody2D playerRb;//Player's rigidbody
     private float maxSpeed =20;//Maxspeed allowed
    
     public bool onGround = true;
 
-    [Header("PlayerControls")]
-    private PlayerControls playerControls; //reference to player controls
+    [Header("Player Controls")]
+    private InputAction moveAction;
+    private InputAction jumpAction;
 
 
     private void Awake()
@@ -25,48 +26,38 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         Physics.gravity *= gravityModifier;
 
-        playerControls = new PlayerControls(); //instantiate the player controls
+        // Find input actions by name
+        var playerControlsAsset = Resources.Load<InputActionAsset>("PlayerControls");
+        moveAction = playerControlsAsset.FindAction("Move");
+        jumpAction = playerControlsAsset.FindAction("Jump");
 
-    }
+        // Enable the input actions
+        moveAction.Enable();
+        jumpAction.Enable();
 
-    private void OnEnable() //enable action map in order to read from it
-    {
-        playerControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
-    }
-
-    private void Start()
-    {
-            
+        // Disable the input actions when the script is disabled
+        moveAction.Disable();
+        jumpAction.Disable();
     }
 
     void Update()
     {
-        float move = playerControls.Default.Move.ReadValue<float>();
-        Debug.Log(move);
+        //read move input value
+        horizontalInput = moveAction.ReadValue<float>();
 
-        playerControls.Default.Jump.ReadValue<float>();
-        if (playerControls.Default.Jump.ReadValue<float>() == 1)
-        {
-            Debug.Log("Jump");
-        }
-
-        horizontalInput = move;
-        
-
-        playerRb.AddForce(transform.right * speed * horizontalInput);
+        // Move the player horizontally
+        playerRb.AddForce(Vector2.right * speed * horizontalInput);
 
         if (playerRb.velocity.magnitude > maxSpeed) //stops the player from accelerating endlessley
         {
             playerRb.velocity = Vector2.ClampMagnitude(playerRb.velocity, maxSpeed);
         }
 
-        if ((playerControls.Default.Jump.ReadValue<float>() == 1) && onGround)
-        
+        if (jumpAction.triggered && onGround)
         {
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             onGround = false;
