@@ -220,16 +220,18 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             ResetBinding(action, bindingIndex);
 
-            //if (action.bindings[bindingIndex].isComposite)
-            //{
-            //    // It's a composite. Remove overrides from part bindings.
-            //    for (var i = bindingIndex + 1; i < action.bindings.Count && action.bindings[i].isPartOfComposite; ++i)
-            //        action.RemoveBindingOverride(i);
-            //}
-            //else
-            //{
-            //    action.RemoveBindingOverride(bindingIndex);
-            //}
+            if (action.bindings[bindingIndex].isComposite)
+            {
+                // It's a composite. Remove overrides from part bindings.
+                for (var i = bindingIndex + 1; i < action.bindings.Count && action.bindings[i].isPartOfComposite; ++i)
+                    action.RemoveBindingOverride(i);
+            }
+            else
+            {
+                ResetBinding(action, bindingIndex);
+                //old code
+                //action.RemoveBindingOverride(bindingIndex);
+            }
             UpdateBindingDisplay();
         }
 
