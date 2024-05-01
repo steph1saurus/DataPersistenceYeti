@@ -228,9 +228,10 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             }
             else
             {
-                ResetBinding(action, bindingIndex);
-                //old code
+
                 //action.RemoveBindingOverride(bindingIndex);
+                //removed and replaced with
+                ResetBinding(action, bindingIndex);
             }
             UpdateBindingDisplay();
         }
