@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 public class TextScaleHandler : MonoBehaviour
 {
@@ -29,6 +28,7 @@ public class TextScaleHandler : MonoBehaviour
 
         // Determine if the slider value changed in the positive direction
         bool sliderIncreased = sliderValue > lastSliderValue;
+        bool sliderDecreased = sliderValue < lastSliderValue;
 
         // Update the last slider value
         lastSliderValue = sliderValue;
@@ -45,17 +45,35 @@ public class TextScaleHandler : MonoBehaviour
             {
                 TextMeshProUGUI[] textMeshes = rootObject.GetComponentsInChildren<TextMeshProUGUI>(true);
 
-                // Change the Font Size for each TextMeshProUGUI object found
-                foreach (TextMeshProUGUI textMesh in textMeshes)
+                if (sliderIncreased)
                 {
-                    // Get the original font size
-                    float originalFontSize = textMesh.fontSize;
+                    // Change the Font Size for each TextMeshProUGUI object found
+                    foreach (TextMeshProUGUI textMesh in textMeshes)
+                    {
+                        // Get the original font size
+                        float originalFontSize = textMesh.fontSize;
 
-                    // Calculate the new font size based on the scrollbar value change direction
-                    float newFontSize = originalFontSize + (sliderIncreased? 10 : -10);
+                        // Calculate the new font size based on the scrollbar value change direction
+                        newFontSize = originalFontSize + 20;
 
-                    // Apply the new font size (make sure it doesn't go below 0)
-                    textMesh.fontSize = (int)Mathf.Max(0, newFontSize);
+                        // Apply the new font size (make sure it doesn't go below 0)
+                        textMesh.fontSize = (int)Mathf.Max(0, newFontSize);
+                    }
+                }
+                if (sliderDecreased)
+                {
+                    // Change the Font Size for each TextMeshProUGUI object found
+                    foreach (TextMeshProUGUI textMesh in textMeshes)
+                    {
+                        // Get the original font size
+                        float originalFontSize = textMesh.fontSize;
+
+                        // Calculate the new font size based on the scrollbar value change direction
+                        newFontSize = originalFontSize - 20;
+
+                        // Apply the new font size (make sure it doesn't go below 0)
+                        textMesh.fontSize = (int)Mathf.Max(0, newFontSize);
+                    }
                 }
 
             }
