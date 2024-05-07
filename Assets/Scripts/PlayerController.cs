@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction jumpAction;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource playerAudio;
+    [SerializeField] AudioClip jumpSound;
+
 
     private void Awake()
     {
@@ -61,6 +65,9 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             onGround = false;
+            playerAudio.PlayOneShot(jumpSound);
+
+
         }
     }
 
