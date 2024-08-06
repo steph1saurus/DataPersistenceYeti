@@ -47,3 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 770247909
+    locked: 0
+  - name: Platforms
+    uniqueID: 1928632003
+    locked: 0
+  - name: Player
+    uniqueID: 1438660319
+    locked: 0
+  - name: Pickup
+    uniqueID: 129331199
+    locked: 0
