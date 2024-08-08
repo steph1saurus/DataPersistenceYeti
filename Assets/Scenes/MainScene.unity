@@ -6255,8 +6255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e28ca095477a4e6ea46a6078bd0e8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 519420028}
   player: {fileID: 795346606}
-  offset: {x: 0, y: 2, z: -10}
+  offset: {x: 0, y: 2, z: 0}
 --- !u!1 &560920681
 GameObject:
   m_ObjectHideFlags: 0
