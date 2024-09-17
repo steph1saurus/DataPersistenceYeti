@@ -6160,7 +6160,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420034}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6243,7 +6243,7 @@ Transform:
   - {fileID: 1827665913}
   m_Father: {fileID: 591779128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420034
+--- !u!114 &519420033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6255,9 +6255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e28ca095477a4e6ea46a6078bd0e8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   player: {fileID: 795346606}
-  offset: {x: 0, y: 2, z: 0}
+  offset: 2
+  smoothSpeed: 0.125
 --- !u!1 &560920681
 GameObject:
   m_ObjectHideFlags: 0
