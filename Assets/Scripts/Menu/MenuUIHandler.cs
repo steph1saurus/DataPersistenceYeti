@@ -19,15 +19,15 @@ public class MenuUIHandler : MonoBehaviour
 
     public void ExitGame()
     {
-        
-        if (Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode(); //Quits play mode
-        }
-        else
-        {
-            Application.Quit(); //Quits application after game is built
-        }
+        Application.Quit();
+        //if (Application.isEditor)
+        //{
+        //    EditorApplication.ExitPlaymode(); //Quits play mode
+        //}
+        //else
+        //{
+        //    Application.Quit(); //Quits application after game is built
+        //}
     }
 
     
